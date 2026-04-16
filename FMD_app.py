@@ -157,7 +157,7 @@ monthly_df['Collection_%'] = np.where(
 )
 
 fig_line = px.line(monthly_df, x='month_name', y='Collection_%',
-                   markers=True, title='Collection Efficiency %')
+                   markers=True, title='Collection Efficiency %',labels={'month_name': 'Month'})
 
 st.plotly_chart(fig_line, use_container_width=True)
 
@@ -173,7 +173,7 @@ monthly_gap = filtered_df.groupby('month_name', observed=False).agg({
 monthly_gap['Revenue_Gap'] /= 1e7
 
 fig_gap = px.bar(monthly_gap, x='month_name', y='Revenue_Gap',
-                 title='Revenue Gap (Cr)', text='Revenue_Gap')
+                 title='Revenue Gap (Cr)', text='Revenue_Gap',labels={'month_name': 'Month'})
 
 st.plotly_chart(fig_gap, use_container_width=True)
 
