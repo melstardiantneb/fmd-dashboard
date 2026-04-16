@@ -141,7 +141,7 @@ plot_df = monthly_df.melt(
 )
 
 fig_bar = px.bar(plot_df, x='month_name', y='Amount', color='Type',
-                 barmode='group', title='Month-wise Billed vs Collection (Cr)')
+                 barmode='group', title='Month-wise Billed vs Collection (Cr)', labels={'month_name': 'Month'})
 
 st.plotly_chart(fig_bar, use_container_width=True)
 
